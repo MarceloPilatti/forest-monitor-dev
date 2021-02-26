@@ -10,8 +10,6 @@ export NVM_DIR="$HOME/.nvm"
 nvm install 14
 nvm use 14
 
-
-
 cd ~/mydevel/
 
 git clone -b develop -o upstream https://github.com/brazil-data-cube/forest-monitor.git

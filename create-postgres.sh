@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo docker network create forest_monitor_net
+
 sudo docker volume create forest_monitor_pg_vol
 
 sudo docker run -d \
@@ -16,3 +18,5 @@ sudo docker exec -it forest_monitor_pg bash -c "echo 'localhost:5432:forest_moni
 sudo docker exec -it forest_monitor_pg bash -c "sed -i 's/max_connections = 100/max_connections = 1000/' /var/lib/postgresql/data/postgresql.conf"
 
 sudo docker restart forest_monitor_pg
+
+sudo docker network connect forest_monitor_net forest_monitor_pg
