@@ -11,7 +11,7 @@ sudo docker run -d \
            -e POSTGRES_PASSWORD="postgres" \
            --ipc=host \
            --shm-size 128m \
-           postgis/postgis:11-2.5
+           postgis/postgis:12-3.0
 
 sudo docker exec -it forest_monitor_pg bash -c "echo 'localhost:5432:forest_monitor:postgres:postgres' > /root/.pgpass;chmod 0600 /root/.pgpass"
 
